@@ -1,0 +1,58 @@
+name: 'EquilateralAgents Code Analysis'
+author: 'HappyHippo.ai'
+description: 'AI-enhanced code analysis and automation for GitHub workflows'
+branding:
+  icon: 'cpu'
+  color: 'blue'
+
+inputs:
+  workflow-type:
+    description: 'Type of workflow to run'
+    required: false
+    default: 'code-review'
+  project-path:
+    description: 'Path to analyze'
+    required: false
+    default: '.'
+  llm-provider:
+    description: 'LLM provider (github, openai, anthropic, bedrock, none)'
+    required: false
+    default: 'github'
+  ai-enabled:
+    description: 'Enable AI enhancements'
+    required: false
+    default: 'true'
+  github-token:
+    description: 'GitHub token for API access'
+    required: false
+    default: ${{ github.token }}
+  create-pr-comment:
+    description: 'Post analysis results as PR comment'
+    required: false
+    default: 'true'
+  create-check-run:
+    description: 'Create GitHub check run with results'
+    required: false
+    default: 'true'
+  fail-on-errors:
+    description: 'Fail the action if critical errors are found'
+    required: false
+    default: 'false'
+
+outputs:
+  results:
+    description: 'Analysis results in JSON format'
+  summary:
+    description: 'Human-readable summary'
+  issues-found:
+    description: 'Number of issues found'
+  critical-issues:
+    description: 'Number of critical issues'
+  pr-comment-id:
+    description: 'ID of the created PR comment'
+  check-run-id:
+    description: 'ID of the created check run'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
