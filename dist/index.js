@@ -6681,7 +6681,7 @@ exports.Deprecation = Deprecation;
  * EquilateralAgents™ is a trademark of HappyHippo.ai
  *
  * Simple code analysis agent for basic quality checks.
- * Demonstrates the agent pattern without database coordination.
+ * Demonstrates the agent pattern for code analysis.
  */
 
 const BaseAgent = __nccwpck_require__(3012);
@@ -36653,7 +36653,7 @@ module.exports = parseParams
 /***/ ((module) => {
 
 "use strict";
-module.exports = {"i8":"1.0.1"};
+module.exports = {"i8":"1.0.2"};
 
 /***/ }),
 
